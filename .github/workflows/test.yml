@@ -25,6 +25,6 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: sftp
+        protocol: ftps
         local-dir: ./dst/
         server-dir: /customers/0/d/7/kinderfoor.be/httpd.www/test/
