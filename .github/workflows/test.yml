@@ -1,0 +1,29 @@
+on:
+  push:
+    branches: [ "develop" ]
+name: 🚀 Deploy develop branch to test
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: windows-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.17.1'
+
+    - run: npm ci
+
+    - run: npm run build
+            
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dst/
+        server-dir: /customers/0/d/7/kinderfoor.be/httpd.www/test/

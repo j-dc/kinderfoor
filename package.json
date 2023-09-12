@@ -1,0 +1,25 @@
+{
+  "name": "kinderfoor",
+  "version": "1.0.0",
+  "description": "sourcecode of a website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"ALL OK\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-dc/kinderfoor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-dc/kinderfoor/issues"
+  },
+  "homepage": "https://github.com/j-dc/kinderfoor#readme",
+  "devDependencies": {
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
