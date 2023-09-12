@@ -26,4 +26,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dst/
-        server-dir: /customers/0/d/7/kinderfoor.be/httpd.www
+        server-dir: /customers/0/d/7/kinderfoor.be/httpd.www/
