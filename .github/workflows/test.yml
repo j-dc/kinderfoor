@@ -15,9 +15,11 @@ jobs:
       with:
         node-version: '18.17.1'
 
-    - run: 📲 npm ci
-
-    - run: 🔨npm run build
+    - name: 📲 fetch needed stuf
+      run: npm ci
+  
+    - name: 🔨 BUILD
+      run: npm run build
     
     - name: 📂 Sync files
       uses: Dylan700/sftp-upload-action@latest
