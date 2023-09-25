@@ -10,14 +10,14 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 1️⃣8️⃣
       uses: actions/setup-node@v3
       with:
         node-version: '18.17.1'
 
-    - run: npm ci
+    - run: 📲 npm ci
 
-    - run: npm run build
+    - run: 🔨npm run build
     
     - name: 📂 Sync files
       uses: Dylan700/sftp-upload-action@latest
@@ -27,4 +27,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: 22
         uploads: |
-          ./dst/ => /customers/0/d/7/kinderfoor.be/httpd.www/
+          ./dst/ => /customers/0/d/7/kinderfoor.be/httpd.www/test/
