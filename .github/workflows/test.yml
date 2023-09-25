@@ -20,13 +20,14 @@ jobs:
     - run: npm run build
     
     - name: 📂 Sync files
-      uses: Dylan700/sftp-upload-action@latest
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
-        passphrase: ${{ secrets.FTP_PASSWORD }}
-        port: 22
-        uploads: |
-          ./dst/ => /customers/0/d/7/kinderfoor.be/httpd.www/test
-        delete: 'true'
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftp
+        local-dir: ./dst/
+        server-dir: /customers/0/d/7/kinderfoor.be/httpd.www/
+        log-level: verbose
+        security: loose
 
