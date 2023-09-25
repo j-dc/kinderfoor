@@ -1,11 +1,17 @@
 import $ from 'jquery';
 
  function component() {
-   const element = $('div');
+   const element = $('<div>');
    element.innerHTML  = "TEST FROM WEBPACK";
-   return element;
+   element.addClass = "hello";
+   return element[0];
  }
 
+
+console.log(component());
+
  document.body.appendChild(component());
+
+
 
  
