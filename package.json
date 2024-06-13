@@ -30,6 +30,8 @@
   },
   "homepage": "https://github.com/j-dc/kinderfoor#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "bootstrap": "^5.3.3",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
@@ -46,6 +48,6 @@
     "webpack-cli": "^5.1.4"
   },
   "engines": {
-    "node": "22.14.0"
+    "node": "20.14.0"
   }
 }
