@@ -16,6 +16,11 @@
     width: 30rem
 }
 
+.masthead ul{
+    list-style-type: none;
+    padding:0;
+}
+
 @media (min-width: 992px) {
     .masthead {
         padding-top:calc(6rem + 20px);

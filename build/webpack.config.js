@@ -37,7 +37,16 @@ module.exports = {
          buildDate: (new Date()).toLocaleDateString("nl-BE"),
          buildYear: (new Date()).getFullYear(),
          template: "./src/index.html",
+         filename:"index.html",
          chunks: ['main','shared']
+      }),
+      new HtmlWebpackPlugin({
+         title: "Kinderfoor Kuurne",
+         buildDate: (new Date()).toLocaleDateString("nl-BE"),
+         buildYear: (new Date()).getFullYear(),
+         template: "./src/index2.html",
+         filename:"index2.html",
+         chunks: ['kfMain','kfShared']
       }),
       new CopyPlugin({'patterns': [
         {from:'./src/img/', to:'img'}
@@ -53,8 +62,11 @@ module.exports = {
       extensions:['.tsx','.ts','.js']
    },
    entry: {
-      "main":{import:path.resolve(__dirname,'../src/ts/view/index.ts'), dependOn:'shared'},
-      "shared" :{import:path.resolve(__dirname,'../src/style/_shared.scss')}
+
+         "main":{import:path.resolve(__dirname,'../src/ts/view/index.ts'), dependOn:'shared'},
+         "shared" :{import:path.resolve(__dirname,'../src/style/_shared.scss')},
+         "kfMain":{import:path.resolve(__dirname,'../src/ts/view/index2.ts'), dependOn:'kfShared'},
+         "kfShared":{import:path.resolve(__dirname,'../src/style/kf/main.scss')}
    },
    output: {
       path: path.resolve(__dirname, '../dist'),

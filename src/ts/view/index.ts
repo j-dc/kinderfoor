@@ -1,6 +1,10 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram, faFacebookF} from '@fortawesome/free-brands-svg-icons'
+
 import Html from '../lib/Html';
+
+
 
 
 const kfDate = new Date(2024,8,15);
@@ -22,7 +26,7 @@ Html.qsa('.kfDateShort').forEach((el)=> el.innerHTML = _kfDateShort);
 
 
 // We are only using the user-astronaut icon
-library.add(faStar)
+library.add(faStar,faInstagram,faFacebookF, faEnvelope)
 
 // Replace any existing <i> tags with <svg> and set up a MutationObserver to
 // continue doing this as the DOM changes.

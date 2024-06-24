@@ -1,0 +1,23 @@
+@font-face {
+    font-family: kfLogo;
+    src: url(../../fonts/KFLogo.woff) format("woff")
+}
+
+@font-face {
+    font-family: kfText;
+    src: url(../../fonts/KFText.ttf) format("truetype")
+}
+
+.kfFontLogo {
+    font-family: kfLogo;
+    font-weight: 400;
+}
+
+
+ .kfFont {
+     font-family: kfText;
+//     font-weight: 400;
+//     color: #000
+ }
+
+
