@@ -13,7 +13,7 @@ jobs:
     - name: Use Node.js 1️⃣8️⃣
       uses: actions/setup-node@v3
       with:
-        node-version: '18.17.1'
+        node-version: '20.14.0'
 
     - name: 📲 fetch needed stuf
       run: npm ci
