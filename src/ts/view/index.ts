@@ -7,7 +7,7 @@ import Html from '../lib/Html';
 import '../../style/main.scss'
 
 
-
+window.addEventListener("load",()=>doLoad(),false);
 
 const kfDate = new Date(2024,8,15);
 const now = new Date();
@@ -32,4 +32,20 @@ library.add(faStar,faInstagram,faFacebookF, faEnvelope)
 
 // Replace any existing <i> tags with <svg> and set up a MutationObserver to
 // continue doing this as the DOM changes.
-dom.watch()
+dom.watch();
+
+function initNavbar(){
+    var hrefs = Html.qsa('.navbar-collapse a');
+    var btns = hrefs.concat(Html.qs('.navbar-toggler'));
+
+    btns.forEach((btn:HTMLElement) => {
+        btn.addEventListener('click',(evt)=>{
+            var menu = Html.qs('.navbar-collapse');
+            menu.classList.toggle('show');
+        });
+    });
+}
+
+async function doLoad(){
+    initNavbar();
+}
