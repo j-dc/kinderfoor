@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
   <meta name="author" content="">
-  <title>Kinderfoor Kuurne</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
@@ -19,199 +18,229 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
     rel="stylesheet" type="text/css">
 
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <!-- CSS FILES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
 </head>
 
-<body id="page-top">
+<body>
+  <main>
 
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-    <div class="container">
-      <i class="fas fa-star text-KFLight"></i>&nbsp;&nbsp;
-      <a class="navbar-brand js-scroll-trigger logoFont" href="#page-top">Kinderfoor</a>
-      <i class="fas fa-star text-KFLight"></i>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-        type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-        aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#supportedBy">Ondersteund door</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#what">Wat</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#who">Wie</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header class="masthead bg-secundary text-center">
-    <div class="container d-flex align-items-center flex-column">
-      <img class="masthead-avatar mb-5" src="./img/Kinderfoor.png" alt="">
-      <h1 class="masthead-heading text-uppercase mb-0 logoFont">Kinderfoor</h1>
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <p class="masthead-subheading font-weight-light mb-0">
-        <span class="kfDate"></span><br>
-        Vanaf 13u30 - Sportpark Kuurne<br> 
-        Gratis voor iedereen!
-      </p>
-      <p>Nog <span class="kfCountdown"></span> keer slapen</p>
-
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="container align-items-center">
-      <div class="row">
-        <div class="col-lg-12 large">
-          Wat breng ik mee op <span class="kfDateShort"></span>?<br />
-          <br />
-          <ul class="small">
-            <li>Goed humeur</li>
-            <li>Speelkledij (die vuil mag zijn)</li>
-            <li>Verse kleren (die ook vuil mogen zijn)</li>
-            <li>Zwemkledij (duiktank,..) </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Sponsor Section -->
-  <section class="page-section portfolio bg-secondary" id="supportedBy">
-    <div class="container">
-
-      <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase mb-0">Ondersteund door</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3 text-center">
-
-          <img src="img/logo/kuurne.svg">
-
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3 text-center">
-          <img src="img/logo/wanorde.webp">
-
-        </div>
-      </div>
-      <div>&nbsp;</div>
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3 text-center">
-
-          <img src="img/logo/wb.svg">
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="page-section mb-0" id="what">
-    <div class="container">
-
-      <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase">Wat</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- About Section Content -->
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-
-          <p class="lead">
-
-            <b>Jippie!</b> Het is weer tijd voor Kinderfoor, het grootste kinderfeest van het jaar! Op <span
-              class="kfDate"></span> wordt het sportpark van Kuurne omgetoverd tot een magisch speelparadijs. En raad
-            eens? Het is helemaal GRATIS!
-            <br>
-            Stel je voor, meer dan 50 activiteiten alleen voor jou! Je kunt duiken in een grote duiktank of je eigen
-            muur metselen. Hoe cool is dat?
-            <br>
-            En weet je wat nog meer geweldig is? Je ouders en grootouders kunnen lekker ontspannen op het
-            Kinderfoorterras terwijl jij de tijd van je leven hebt.
-            <br>
-            Als afsluiter genieten we nog samen van een leuke slotshow.
-            <br>
-            Dus pak je speelkleding, Kinderfoortas en zwemkleding en maak je klaar voor een dag vol plezier en avontuur.
-            Alle activiteiten op de Kinderfoor zijn gratis!
-            <br>
-
-            Dus zet het in je agenda: <span class="kfDate"></span>, vanaf 13u30. We kunnen niet wachten om je daar te
-            zien!
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <section class="page-section bg-secondary mb-0" id="who">
+    <nav class="navbar navbar-expand-lg sticky-wrapper">
       <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase">Wie</h2>
+        <a class="navbar-brand" href="index.html">
+          <%= htmlWebpackPlugin.options.title %>
+        </a>
 
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="divider-custom-line"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+            <!-- <li class="nav-item">
+              <a class="nav-link click-scroll" href="#">Home</a>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#sponsors">Onze Sponsors</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#bereikbaarheid">Bereikbaarheid</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#wat">Wat</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="#wie">Wie</a>
+            </li>
+
+            <!-- <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Buy Ticket</a> -->
         </div>
+      </div>
+    </nav>
 
+    <section class="hero-section" id="Home">
+      <div class="section-overlay"></div>
+
+      <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
-          <div class="col-lg-6 ml-auto">
-            <p>
-              De kinderfoor is een organisatie die 100% door vrijwilligers getrokken wordt.<br>
-              Hier is de lijst van onze superhelden:<br>
-            </p>
+
+          <div class="col-12 mt-auto mb-5 text-center text-white">
+            <img src="./img/logo.png" alt="logo hs kuurne">
+            <br>
+            Nog <span class="kfCountdown"></span> keer slapen.
+          </div>
+
+          <div class="col-lg-12 col-12 mt-auto  text-center">
+            <div class="date-wrap ">
+              <h5 class="text-white">
+                Zondag 15 September 2024 - Vanaf 13u30
+              </h5>
+              <h5 class="text-white red-circle">
+                Nieuwe Locatie: Sportpark Kuurne
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-wrap">
+        <img src="./img/overzicht_web.webp" class="bg" alt="overzicht" />
+      </div>
+    </section>
+
+    <section class="sponsor-section section-padding" id="sponsors">
+      <a class="top" href="#">⬆ TOP</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class=" mb-4">Met de gewaardeerde steun van:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12 mb-4   ">
+            <img src="./img/logo/kuurne.svg" alt="kuurne.be">
+          </div>
+          <div class="col-lg-6 col-12 mb-4  ">
+            <img src="./img/logo/wanorde.webp" alt="wanorde">
+          </div>
+          <div class="col-6 col-lg-4  mb-3  ">
+            <img src="./img/logo/flextra.png" alt="flextra interim">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/kotopstelten.jpg" alt="kot op stelten">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/reatub.png" alt="kot op stelten">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/wb.svg" alt="wynant & broekaert">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/ogenbliksem.png" alt="ogenbliksem">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/sportkaffee.png" alt="sportkaffee">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/stmichiel.svg" alt="st. michiels drukkerij">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/agristo.png" alt="agristo">
+          </div>
+          <div class="col-6 col-lg-4  mb-3 ">
+            <img src="./img/logo/4u-renting.svg" alt="4u renting">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="bereikbaarheid-section section-padding" id="bereikbaarheid">
+      <a class="top" href="#">⬆ TOP</a>
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <div class="col-12 text-center">
+            <h1 class="mb-4">Bereikbaarheid</h1>
+          </div>
+          <div>
+            <h4>Algemeen</h4>
+            Boomgaardstraat 134 - 8520 Kuurne<br>
+            <span class="small">Parking aan hoeve van de walle is voorbehouden</span>
+          </div>
+          <div>
+            <h4>Met de fiets</h4>
+            We hebben super graag dat je met de fiets komt!<br>
+            We hebben veel, heel veel, fietsparking voorzien.<br>
+          </div>
+          <div>
+            <h4>Met de wagen</h4>
+            Gelieve niet in de omgeving te parkeren.<br>
+            Parkeren kan op: <br>
+            - Zwembad kuurne - Nieuwenhuyse (ter hoogte van nr 44) - en kom langs het zwembad langs onze achterdeur
+            binnen<br>
+            - Kubox kuurne - Kattestraat 188 - en wandel naar zwembad kuurne.<br>
+            - De vlaskouter Kuurne - en wandel naar Boomgaardstraat 134<br>
+            <br>
+          </div>
+          <div>
+            <h4>Vanuit Kuurne</h4>
+            Kom met de fiets! <br>
+            We hebben veel fietsparking voorzien.<br>
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="wat-section section-padding" id="wat">
+      <a class="top text-white" href="#">⬆ TOP</a>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-12 text-center">
+            <h1>De kinderfoor</h1>
+          </div>
+          <div class="col-12">
+            <p class="lead">
+
+              <b>Jippie!</b> Het is weer tijd voor Kinderfoor, het grootste kinderfeest van het jaar! Op <span
+                class="kfDate"></span> wordt het sportpark van Kuurne omgetoverd tot een magisch speelparadijs. En raad
+              eens? Het is helemaal GRATIS!
+              <br>
+              Stel je voor, meer dan 50 activiteiten alleen voor jou! Je kunt duiken in een grote duiktank of je eigen
+              muur metselen. Hoe cool is dat?
+              <br>
+              En weet je wat nog meer geweldig is? Je ouders en grootouders kunnen lekker ontspannen op het
+              Kinderfoorterras terwijl jij de tijd van je leven hebt.
+              <br>
+              Als afsluiter genieten we nog samen van een leuke slotshow.
+              <br>
+              Dus pak je speelkleding, Kinderfoortas en zwemkleding en maak je klaar voor een dag vol plezier en
+              avontuur.
+              Alle activiteiten op de Kinderfoor zijn gratis!
+              <br>
+
+              Dus zet het in je agenda: <span class="kfDate"></span>, vanaf 13u30. We kunnen niet wachten om je daar te
+              zien!
+
+          </div>
+
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+
+    <section class="pricing-section section-padding section-bg" id="wie">
+      <a class="top" href="#">⬆ TOP</a>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-12">
+            <h2 class="text-center mb-4">Wie</h2>
+          </div>
+          <div class="col-12 lead">
+            De kinderfoor is een organisatie die 100% door vrijwilligers getrokken wordt.<br>
+            Hier is de lijst van onze superhelden:<br>
+            <br>
             <ul>
               <li>Astrid Vanwynsberghe</li>
               <li>Ellen Bouckaert</li>
@@ -224,107 +253,45 @@
               <li>Marjolijn Desmet</li>
               <li>Phebe Vandecaveye</li>
               <li>Pieter Defoor</li>
-              <ul>
-                <p></p>
-              </ul>
             </ul>
           </div>
-          <div class="col-lg-6 ml-auto">
-            <p class="lead">
-              Wij zijn steeds op zoek naar gemotiveerde mensen om ons kernteam te vervoegen.</p>
-            <p>
-              Wij zoeken nog enthousiastelingen om van deze Kinderfoor weer een topeditie te maken: voor de opbouw,
-              de afbraak of om een stand te bemannen in de namiddag.
+        </div>
+      </div>
+    </section>
+
+
+    <section class="contact-section section-padding" id="Contact">
+      <a class="top " href="#">⬆ TOP</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="text-center mb-4"> Contacteer ons</h2>
+            <a href="mailto:info@kinderfoor.be">info@kinderfoor.be</a>
+          </div>
+        </div>
+
+      </div>
+     
+    </section>
+
+    
+    
+  <footer class="site-footer">
+   
+   
+    <div class="site-footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="copyright-text">Copyright © <%= htmlWebpackPlugin.options.buildYear %> Kinderfoor Kuurne
+            </p>
+            <p class="copyright-text">D.D. <%= htmlWebpackPlugin.options.buildDate %>
             </p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="page-section mb-0" id="contact">
-      <div class="container">
-
-        <!-- Contact Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase mb-0">Contacteer ons</h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 ml-auto">
-            <p class="lead">
-              <a href="mailto:info@kinderfoor.be">info@kinderfoor.be</a>
-            </p>
-          </div>
-        </div>
-
-
-
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container">
-        <div class="row">
-
-          <!-- Footer Location -->
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Locatie</h4>
-            <p class="lead mb-0">Sportpark Kuurne</p>
-          </div>
-
-          <!-- Footer Social Icons -->
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Around the Web</h4>
-            
-            <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/kinderfoor_kuurne/"
-              target="_blank">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/kinderfoor.kuurne/"
-              target="_blank">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a class="btn btn-outline-light btn-social mx-1" href="mailto:info@kinderfoor.be">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-
-          </div>
-
-          <div class="col-lg-4">
-            <h4 class="text-uppercase mb-4 logoFont text-white">Kinderfoor</h4>
-            <p class="mb-0"><span class="kfDate"></span></p>
-            <p>Gratis voor iedereen</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Copyright Section -->
-    <section class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>&copy; kinderfoor.be</small>
-      </div>
-    </section>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed">
-      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
     </div>
-
-    <div class="fixed-bottom" style="width:150px; left:unset">
-      <img src="img/KFKidBox.png" style="width:150px">
-    </div>
-  </section>
+  </footer>
 </body>
+
 </html>

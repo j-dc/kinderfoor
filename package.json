@@ -41,7 +41,7 @@
     "json-minimizer-webpack-plugin": "^5.0.0",
     "purecss": "^3.0.0",
     "sass": "^1.77.5",
-    "sass-loader": "^14.2.1",
+    "sass-loader": "^16.0.1",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",

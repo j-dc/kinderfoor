@@ -4,6 +4,8 @@ import { faInstagram, faFacebookF} from '@fortawesome/free-brands-svg-icons'
 
 import Html from '../lib/Html';
 
+import '../../style/main.scss'
+
 
 
 
