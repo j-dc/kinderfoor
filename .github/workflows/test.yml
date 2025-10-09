@@ -1,14 +1,14 @@
-# on:
-#   push:
-#     branches: [ "develop" ]
-# name: 🚀 Deploy develop branch to test
-# jobs:
-#   web-deploy:
-#     name: 🎉 Deploy
-#     runs-on: windows-latest
-#     steps:
-#     - name: 🚚 Get latest code
-#       uses: actions/checkout@v3
+ on:
+   push:
+     branches: [ "develop" ]
+ name: 🚀 Deploy develop branch to test
+ jobs:
+   web-deploy:
+     name: 🎉 Deploy
+     runs-on: windows-latest
+     steps:
+     - name: 🚚 Get latest code
+       uses: actions/checkout@v3
 
 #     - name: Use Node.js 1️⃣8️⃣
 #       uses: actions/setup-node@v3

@@ -1,8 +1,8 @@
-name: Deploy to Azure Static Website
-
 on:
   push:
     branches: [ "develop" ]
+
+name: 🚀 Deploy to Azure Static Website
 
 jobs:
   build-and-deploy:
@@ -12,7 +12,7 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js 1️⃣8️⃣
+    - name: Use Node.js 20
       uses: actions/setup-node@v3
       with:
         node-version: '20.14.0'
