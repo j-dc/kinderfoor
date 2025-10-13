@@ -38,7 +38,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name kinderfoorweb1755 --auth-mode login -d '$web' -s . 
+            az storage blob upload-batch --account-name kinderfoorweb1755 --overwrite --auth-mode login -d '$web' -s . 
   
     # Azure logout
     - name: logout
@@ -46,4 +46,3 @@ jobs:
             az logout
       if: always()
 
-      
