@@ -2,6 +2,10 @@ on:
   push:
     branches: [ "develop" ]
 
+permissions:
+  id-token: write
+  contents: read
+
 name: 🚀 Deploy to Azure Static Website
 
 jobs:
