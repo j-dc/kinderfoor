@@ -39,7 +39,7 @@ jobs:
       with:
         inlineScript: |
             az storage blob upload-batch --account-name kinderfoorweb1755 --auth-mode key -d '$web' -s . 
- 
+  
     # Azure logout
     - name: logout
       run: |
