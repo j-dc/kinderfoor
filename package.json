@@ -13,10 +13,9 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack --config build/webpack.config.js --mode=production",
-    "watch": "npx webpack --config build/webpack.config.js --mode=production --watch",
-    "run": "docker compose up"
+    "watch": "npx webpack --config build/webpack.config.js --mode=production --watch"
+
   },
   "repository": {
     "type": "git",
