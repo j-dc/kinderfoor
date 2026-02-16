@@ -9,7 +9,7 @@ import '../../style/main.scss'
 
 window.addEventListener("load",()=>doLoad(),false);
 
-const kfDate = new Date(2024,8,15);
+const kfDate = new Date(2026,8,20);
 const now = new Date();
 
 const _format = new Intl.DateTimeFormat('nl-BE', { weekday:'long', year: "numeric", month: "long", day: "numeric" });
