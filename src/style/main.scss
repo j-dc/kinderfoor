@@ -1,4 +1,322 @@
+:root {
+  --kf-bg: #f7ead5;
+  --kf-surface: #f5e4c9;
+  --kf-pink: #f5527d;
+  --kf-pink-dark: #d93469;
+  --kf-red: #ec3a2d;
+  --kf-text: #2d2d2d;
+  --kf-gold: #f7d557;
+  --kf-lamp-1: #ffb25b;
+  --kf-lamp-2: #e35a5a;
+  --kf-lamp-3: #fdd15d;
+  --kf-lamp-4: #3c9ad6;
+  --kf-lamp-5: #4ccab0;
+  --kf-lamp-6: #f56ca8;
+  --kf-lamp-7: #ffc5a3;
+}
 
-@import './kf2024/_general.scss';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--kf-bg);
+  color: var(--kf-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.kf-page-header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem 3rem;
+  background: var(--kf-bg);
+  overflow: hidden;
+}
+
+.kf-header-inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1100px);
+  text-align: center;
+  padding-top: 2.5rem;
+}
+
+.kf-center-logo {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(30vw, 180px);
+  height: auto;
+  z-index: 3;
+}
+
+.kf-brand {
+  display: block;
+  width: min(48vw, 886px);
+  height: auto;
+  margin: 0 auto 0.25rem;
+  object-fit: contain;
+  
+}
+
+.kf-tent {
+  display: block;
+  width: min(48vw, 886px);
+  height: auto;
+  margin: 0 auto 0.25rem;
+  object-fit: contain;
+  filter: saturate(1.25) brightness(1) contrast(1) hue-rotate(0deg);
+  transform: translateY(0.1rem);
+}
+
+.kf-event-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.1;
+  font-weight: 900;
+  color: #d93a36;
+  text-transform: none;
+  font-family: "Comic Sans MS", "Trebuchet MS", "Segoe UI", sans-serif;
+  letter-spacing: 0.02em;
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff,
+    0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.kf-header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.kf-event-row strong {
+  font-size: 1.15em;
+  font-weight: 900;
+}
+
+.kf-event-row-location {
+  margin-top: 0.8rem;
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+}
+
+.kf-event-row-free {
+  margin-top: 0.4rem;
+  font-size: clamp(1.4rem, 2.2vw, 2.4rem);
+  opacity: 0.98;
+}
+
+.kf-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.1em;
+}
+
+.kf-garland {
+  position: absolute;
+  top: 0;
+  width: min(42vw, 500px);
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
+}
+
+.kf-garland-left {
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.kf-garland-right {
+  right: 0;
+}
+
+.kf-fireworks {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.kf-firework {
+  position: absolute;
+  width: clamp(26px, 3vw, 52px);
+  height: auto;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: kf-burst 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes kf-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+  }
+  8% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(12deg);
+  }
+  55% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.15) rotate(-10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.4) rotate(18deg);
+  }
+}
+
+.kf-main {
+  min-height: 1px;
+  padding: 2rem 1rem 4rem;
+}
+
+.kf-sponsors {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 0;
+}
+
+.kf-sponsors h2 {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--kf-red);
+  font-family: "Comic Sans MS", "Trebuchet MS", "Segoe UI", sans-serif;
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+}
+
+.kf-sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kf-sponsor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(217, 58, 54, 0.2);
+  color: var(--kf-text);
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  max-height:100px;
+  overflow:hidden;
+}
+
+.kf-sponsor-kuurne {
+  grid-column: span 2;
+  grid-row: span 4;
+  background: white;
+  max-height:none;
+}
+.kf-sponsor-colora{
+ background:#AE7B65;
+}
+.kf-sponsor-reatub{
+ background:white;
+}
+.kf-sponsor-ververie{
+ background:black;
+}
+.kf-sponsor-sportkafee{
+ background:#000002;
+}
+.kf-sponsor-F07{
+ background:#000000;
+}
+.kf-sponsor-stmichiel{
+  background:#000000;
+}
+
+.kf-sponsor-kuurne img {
+  display: block;
+  width: min(100%, 280px);
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .kf-page-header {
+    min-height: 90vh;
+    padding-top: 3.5rem;
+  }
+
+  .kf-garland {
+    width: min(44vw, 340px);
+  }
+
+  .kf-center-logo {
+    width: min(34vw, 210px);
+    top: 0.5rem;
+  }
+
+  .kf-header-inner {
+    padding-top: 1.5rem;
+  }
+
+  .kf-title {
+    letter-spacing: -0.05em;
+  }
+}
+
+@media (max-width: 520px) {
+  .kf-page-header {
+    min-height: 80vh;
+    padding: 2.2rem 0.75rem 2.5rem;
+  }
+
+  .kf-garland {
+    width: 38vw;
+  }
+
+  .kf-center-logo {
+    width: min(42vw, 170px);
+    top: 0.5rem;
+  }
+
+  .kf-event-row {
+    gap: 0.45rem;
+  }
+
+  .kf-event-row-location {
+    margin-top: 0.5rem;
+  }
+}
+
+.kf-header-inner {
+  text-align: center;
+  align-items: center;
+}

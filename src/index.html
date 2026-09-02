@@ -1,296 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kinderfoor – Kuurne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style/main.scss" />
+  </head>
+  <body>
+    <header class="kf-page-header" id="kf-page-header">
+      <img class="kf-garland kf-garland-left" src="/img/garland.png" alt="" aria-hidden="true" />
+      <img class="kf-garland kf-garland-right" src="/img/garland.png" alt="" aria-hidden="true" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
-  <meta name="author" content="">
+      <img class="kf-center-logo" src="/img/logo/kinderfoor.webp" alt="Kinderfoor" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./img/favicon/site.webmanifest">
+      <div class="kf-fireworks" id="kf-fireworks" aria-hidden="true"></div>
 
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
-    type="text/css">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-    rel="stylesheet" type="text/css">
+      <div class="kf-header-inner">
+        <img class="kf-brand" src="/img/logo/kinderfoor_new.webp" alt="Kinderfoor" />
+        <img class="kf-tent" src="/img/tent.webp" alt="Kinderfoor" />
 
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
-  <!-- CSS FILES -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <main>
-
-    <nav class="navbar navbar-expand-lg sticky-wrapper">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <%= htmlWebpackPlugin.options.title %>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
-            <!-- <li class="nav-item">
-              <a class="nav-link click-scroll" href="#">Home</a>
-            </li> -->
-
-            <li class="nav-item">
-              <a class="nav-link click-scroll" href="#sponsors">Onze Sponsors</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link click-scroll" href="#bereikbaarheid">Bereikbaarheid</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link click-scroll" href="#wat">Wat</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link click-scroll" href="#wie">Wie</a>
-            </li>
-
-            <!-- <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Buy Ticket</a> -->
-        </div>
-      </div>
-    </nav>
-
-    <section class="hero-section" id="Home">
-      <div class="section-overlay"></div>
-
-      <div class="container d-flex justify-content-center align-items-center">
-        <div class="row">
-
-          <div class="col-12 mt-auto mb-5 text-center text-white">
-            <img src="./img/logo.png" alt="logo hs Kuurne">
-            <br>
-            Nog <span class="kfCountdown"></span> keer slapen.
-          </div>
-
-          <div class="col-lg-12 col-12 mt-auto  text-center">
-            <div class="date-wrap ">
-              <h5 class="text-white">
-                Zondag 20 September 2026 - Vanaf 13u30
-              </h5>
-              <h5 class="text-white red-circle">
-                We blijven op onze nieuwe Locatie: Sportpark Kuurne
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-wrap">
-        <img src="./img/overzicht_web.webp" class="bg" alt="overzicht" />
-      </div>
-    </section>
-
-    <section class="sponsor-section section-padding" id="sponsors">
-      <a class="top" href="#">⬆ TOP</a>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2 class=" mb-4">Met de gewaardeerde steun van:</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-12 mb-4   ">
-            <img src="./img/logo/kuurne.svg" alt="Kuurne.be">
-          </div>
-          <div class="col-lg-6 col-12 mb-4  ">
-            <img src="./img/logo/wanorde.webp" alt="wanorde">
-          </div>
-          <div class="col-6 col-lg-4  mb-3  ">
-            <img src="./img/logo/flextra.png" alt="flextra interim">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/kotopstelten.jpg" alt="kot op stelten">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/reatub.png" alt="kot op stelten">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/wb.svg" alt="wynant & broekaert">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/ogenbliksem.png" alt="ogenbliksem">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/sportkaffee.png" alt="sportkaffee">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/stmichiel.svg" alt="st. michiels drukkerij">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/agristo.png" alt="agristo">
-          </div>
-          <div class="col-6 col-lg-4  mb-3 ">
-            <img src="./img/logo/4u-renting.svg" alt="4u renting">
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="bereikbaarheid-section section-padding" id="bereikbaarheid">
-      <a class="top" href="#">⬆ TOP</a>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 text-center">
-            <h1 class="mb-4">Bereikbaarheid</h1>
-          </div>
-          <div>
-            <h4>Algemeen</h4>
-            Boomgaardstraat 134 - 8520 Kuurne<br>
-            <span class="small">Parking aan 'Hoeve Vandewalle' is voorbehouden</span>
-          </div>
-          <div>
-            <h4>Met de fiets</h4>
-            We hebben super graag dat je met de fiets komt!<br>
-            We hebben veel, heel veel, fietsenstalling voorzien.<br>
-            <b>Ingang 1 & 4</b><br>
-            - Fietsenstalling rondom het jeugdcentrum<br>
-            <b>Ingang 2</b><br>
-            - Fietsenstalling bij de oprijlaan van 'Hoeve Vandewalle'<br>
-            <b>Ingang 3</b><br>
-            - Fietsenstalling nabij het zwembad
-          </div>
-          <div>
-            <h4>Met de wagen</h4>
-            Gelieve niet in de omgeving te parkeren.<br>
-            Parkeren kan op: <br>
-            - Zwembad Kuurne - Nieuwenhuyse (ter hoogte van nr 44) - en kom langs het zwembad langs onze achterdeur
-            binnen (ingang 3 of 4) <br>
-            - Kubox Kuurne - Kattestraat 188 - en wandel naar zwembad Kuurne. (ingang 3 of 4)<br>
-            - De Vlaskouter Kuurne - en wandel naar Boomgaardstraat 134 (ingang 1)<br>
-            <br>
-          </div>
-          
-          <div class="col-12">
-            <h4>Overzicht</h4>
-            <img src="./img/sportpark2024.png" alt="overzichts kaart">
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="wat-section section-padding" id="wat">
-      <a class="top text-white" href="#">⬆ TOP</a>
-      <div class="container">
-        <div class="row">
-
-          <div class="col-12 text-center">
-            <h1>De kinderfoor</h1>
-          </div>
-          <div class="col-12">
-            <p class="lead">
-
-              <b>Jippie!</b> Het is weer tijd voor Kinderfoor, het grootste kinderfeest van het jaar! Op <span
-                class="kfDate"></span> wordt het sportpark van Kuurne omgetoverd tot een magisch speelparadijs. En raad
-              eens? Het is helemaal GRATIS!
-              <br>
-              Stel je voor, meer dan 50 activiteiten alleen voor jou! Je kunt duiken in een grote duiktank of je eigen
-              muur metselen. Hoe cool is dat?
-              <br>
-              En weet je wat nog meer geweldig is? Je ouders en grootouders kunnen lekker ontspannen op het
-              Kinderfoorterras terwijl jij de tijd van je leven hebt.
-              <br>
-              Als afsluiter genieten we nog samen van een leuke slotshow.
-              <br>
-              Dus pak je speelkleding, Kinderfoortas en zwemkleding en maak je klaar voor een dag vol plezier en
-              avontuur.
-              Alle activiteiten op de Kinderfoor zijn gratis!
-              <br>
-
-              Dus zet het in je agenda: <span class="kfDate"></span>, vanaf 13u30. We kunnen niet wachten om je daar te
-              zien!
-
-          </div>
-
-        </div>
-      </div>
-      </div>
-      </div>
-    </section>
-
-
-    <section class="pricing-section section-padding section-bg" id="wie">
-      <a class="top" href="#">⬆ TOP</a>
-      <div class="container">
-        <div class="row">
-
-          <div class="col-12">
-            <h2 class="text-center mb-4">Wie</h2>
-          </div>
-          <div class="col-12 lead">
-            De kinderfoor is een organisatie die 100% door vrijwilligers getrokken wordt.<br>
-            Hier is de lijst van onze superhelden:<br>
-            <br>
-            <ul>
-              <li>Astrid Vanwynsberghe</li>
-              <li>Ellen Bouckaert</li>
-              <li>Fauve Ongenaert</li>
-              <li>Fleur Dujardin</li>
-              <li>Hannah Staelens</li>
-              <li>Irene Wielemaker</li>
-              <li>Jan Declercq</li>
-              <li>Kirby D'Hooge</li>
-              <li>Marjolijn Desmet</li>
-              <li>Phebe Vandecaveye</li>
-              <li>Pieter Defoor</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="contact-section section-padding" id="Contact">
-      <a class="top " href="#">⬆ TOP</a>
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h2 class="text-center mb-4"> Contacteer ons</h2>
-            <a href="mailto:info@kinderfoor.be">info@kinderfoor.be</a>
-          </div>
+        <div class="kf-event-row">
+          <span class="kf-date-text"><strong>20</strong> september 2026</span>
         </div>
 
-      </div>
-     
-    </section>
+        <div class="kf-event-row kf-event-row-time">
+          <span>Vanaf 13u30</span>
+        </div>
 
-    
-    
-  <footer class="site-footer">
-   
-   
-    <div class="site-footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <p class="copyright-text">Copyright © <%= htmlWebpackPlugin.options.buildYear %> Kinderfoor Kuurne
-            </p>
-            <p class="copyright-text">D.D. <%= htmlWebpackPlugin.options.buildDate %>
-            </p>
-          </div>
+        <div class="kf-event-row kf-event-row-location">
+          <span>Sportpark Kuurne</span>
+        </div>
+
+        <div class="kf-event-row kf-event-row-free">
+          <span>Gratis evenement</span>
         </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </header>
 
+    <main class="kf-main">
+      <section class="kf-sponsors" aria-labelledby="sponsors-title">
+        <h2 id="sponsors-title">Onze sponsors</h2>
+
+        <div class="kf-sponsors-grid">
+          <div class="kf-sponsor-item kf-sponsor-kuurne"><img src="/img/logo/kuurne.svg" alt="Kuurne" /></div>
+          <div class="kf-sponsor-item"><img src="/img/logo/slagerijstijn.webp" alt="Slagerij Stijn" /></div>
+          <div class="kf-sponsor-item"><img src="/img/logo/nestr.svg" alt="Nestr" /></div>
+          <div class="kf-sponsor-item"><img src="/img/logo/agristo.png" alt="Agristo" /></div>
+          <div class="kf-sponsor-item"><img src="/img/logo/flextra.png" alt="Flextra Interim" /></div>
+          <div class="kf-sponsor-item kf-sponsor-reatub"><img src="/img/logo/reatub.png" alt="Reatub" /></div>
+          <div class="kf-sponsor-item kf-sponsor-colora"><img src="/img/logo/colora.webp" alt="Colora Kuurne" /></div>
+          <div class="kf-sponsor-item kf-sponsor-ververie"><img src="/img/logo/ververie.webp" alt="Ververie" /></div>
+          <div class="kf-sponsor-item"><img src="/img/logo/dronkenezel.webp" alt="Dronken Ezel" /></div>
+          <div class="kf-sponsor-item kf-sponsor-sportkafee"><img src="/img/logo/sportkafee.webp" alt="Sport Kafee" /></div>
+          <div class="kf-sponsor-item kf-sponsor-F07"><img src="/img/logo/fort07.webp" alt="Fort 07" /></div>
+          <div class="kf-sponsor-item kf-sponsor-stmichiel"><img src="/img/logo/stmichiel.svg" alt="Sint-Michiels" /></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/ts/main.js"></script>
+  </body>
 </html>
