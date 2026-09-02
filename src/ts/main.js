@@ -1,10 +1,12 @@
+import vuurwerkUrl from '../img/vuurwerk.png';
+
 const fireworksContainer = document.getElementById('kf-fireworks');
 
 function createFirework() {
   if (!fireworksContainer) return;
 
   const firework = document.createElement('img');
-  firework.src = '/img/vuurwerk.png';
+  firework.src = vuurwerkUrl;
   firework.alt = '';
   firework.className = 'kf-firework';
 
