@@ -1,0 +1,7 @@
+{
+  "name": "kinderfoor-api",
+  "private": true,
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.4"
+  }
+}
