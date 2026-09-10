@@ -1722,7 +1722,7 @@
           <span class="eyebrow">Jouw idee telt</span>
           <h2>Vertel ons jouw Kinderfoor-droom</h2>
           <p>
-            Vul hieronder jouw idee in. Na het verzenden wordt een e-mail klaargezet voor
+            Vul hieronder jouw idee in. Na het verzenden wordt een e-mail verstuurd naar
             <strong>info@kinderfoor.be</strong> met jouw antwoorden.
           </p>
         </div>
@@ -1782,10 +1782,6 @@
               <span>Ik geef toestemming om dit idee te gebruiken als inspiratie voor de organisatie van Kinderfoor 2028.</span>
             </label>
 
-            <div id="localFallbackNote" class="local-fallback-note" hidden>
-              Je bekijkt deze pagina lokaal. Na het klikken opent je e-mailprogramma met jouw ingevulde droom.
-            </div>
-
             <button class="btn btn-primary" type="submit">✨ Verstuur mijn droom</button>
           </form>
 
@@ -1824,61 +1820,6 @@
         document.getElementById('menu').classList.remove('open');
       });
     });
-
-    (function () {
-      const form = document.getElementById('dreamForm');
-      const localNote = document.getElementById('localFallbackNote');
-
-      if (!form) return;
-
-      const isLocalFile = window.location.protocol === 'file:';
-
-      if (isLocalFile && localNote) {
-        localNote.hidden = false;
-      }
-
-      form.addEventListener('submit', function (event) {
-        if (!isLocalFile) {
-          return;
-        }
-
-        event.preventDefault();
-
-        if (!form.reportValidity()) {
-          return;
-        }
-
-        const childName = document.getElementById('childName').value.trim();
-        const dream = document.getElementById('dream').value.trim();
-        const parentName = document.getElementById('parentName').value.trim();
-        const parentEmail = document.getElementById('parentEmail').value.trim();
-
-        const subject = 'Mijn Kinderfoor-droom voor 2028 - ' + childName;
-        const body = [
-          'Hallo Kinderfoor,',
-          '',
-          'Graag deel ik mijn Kinderfoor-droom voor de 25ste editie in 2028.',
-          '',
-          'Voornaam kind: ' + childName,
-          '',
-          'Mijn Kinderfoor-droom:',
-          dream,
-          '',
-          'Naam ouder / begeleider: ' + parentName,
-          'E-mailadres ouder / begeleider: ' + parentEmail,
-          '',
-          'Ik geef toestemming om dit idee te gebruiken als inspiratie voor de organisatie van Kinderfoor 2028.',
-          '',
-          'Groetjes'
-        ].join('\\n');
-
-        window.location.href =
-          'mailto:info@kinderfoor.be?subject=' +
-          encodeURIComponent(subject) +
-          '&body=' +
-          encodeURIComponent(body);
-      });
-    })();
 
   </script>
 </body>
