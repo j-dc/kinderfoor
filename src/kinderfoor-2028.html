@@ -1640,6 +1640,16 @@
       }
     }
 
+  
+    .local-fallback-note {
+      padding: 13px 15px;
+      border-radius: 16px;
+      background: #fff6df;
+      color: #725a2d;
+      font-size: .92rem;
+      border: 1px solid rgba(181,110,24,.14);
+    }
+
   </style>
 </head>
 <body>
@@ -1712,42 +1722,69 @@
           <span class="eyebrow">Jouw idee telt</span>
           <h2>Vertel ons jouw Kinderfoor-droom</h2>
           <p>
-            Vul hieronder jouw idee in. Na het verzenden wordt jouw idee doorgestuurd naar
+            Vul hieronder jouw idee in. Na het verzenden wordt een e-mail klaargezet voor
             <strong>info@kinderfoor.be</strong> met jouw antwoorden.
           </p>
         </div>
 
         <div class="dream-form-wrap">
-          <form class="dream-form" id="dreamForm" onsubmit="sendDream(event)">
-            <div class="field">
-                <label for="childName">Voornaam kind *</label>
-                <input id="childName" name="childName" type="text" required placeholder="Bijvoorbeeld: Marie">
-              </div>
+          
+          <form class="dream-form"
+                id="dreamForm"
+                action="https://formsubmit.co/info@kinderfoor.be"
+                method="POST">
 
-              
+            <input type="hidden" name="_subject" value="Nieuwe Kinderfoor-droom voor 2028">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="field">
+              <label for="childName">Voornaam kind *</label>
+              <input id="childName"
+                     name="Voornaam kind"
+                     type="text"
+                     required
+                     placeholder="Bijvoorbeeld: Marie">
             </div>
 
             <div class="field">
               <label for="dream">Mijn Kinderfoor-droom voor 2028 *</label>
-              <textarea id="dream" name="dream" required placeholder="Wat wil jij het liefst eens doen, maken, ontdekken of beleven op de Kinderfoor?"></textarea>
+              <textarea id="dream"
+                        name="Kinderfoor-droom voor 2028"
+                        required
+                        placeholder="Wat wil jij het liefst eens doen, maken, ontdekken of beleven op de Kinderfoor?"></textarea>
             </div>
 
             <div class="form-grid">
               <div class="field">
                 <label for="parentName">Naam ouder / begeleider *</label>
-                <input id="parentName" name="parentName" type="text" required>
+                <input id="parentName"
+                       name="Naam ouder of begeleider"
+                       type="text"
+                       required>
               </div>
 
               <div class="field">
                 <label for="parentEmail">E-mailadres ouder / begeleider *</label>
-                <input id="parentEmail" name="parentEmail" type="email" required>
+                <input id="parentEmail"
+                       name="email"
+                       type="email"
+                       required>
               </div>
             </div>
 
             <label class="consent">
-              <input type="checkbox" id="consent" required>
+              <input type="checkbox"
+                     id="consent"
+                     name="Toestemming voor gebruik als inspiratie"
+                     value="Ja"
+                     required>
               <span>Ik geef toestemming om dit idee te gebruiken als inspiratie voor de organisatie van Kinderfoor 2028.</span>
             </label>
+
+            <div id="localFallbackNote" class="local-fallback-note" hidden>
+              Je bekijkt deze pagina lokaal. Na het klikken opent je e-mailprogramma met jouw ingevulde droom.
+            </div>
 
             <button class="btn btn-primary" type="submit">✨ Verstuur mijn droom</button>
           </form>
@@ -1788,36 +1825,61 @@
       });
     });
 
-    async function sendDream(event) {
-      event.preventDefault();
+    (function () {
+      const form = document.getElementById('dreamForm');
+      const localNote = document.getElementById('localFallbackNote');
 
-      const form = event.currentTarget;
-      const submitButton = form.querySelector('button[type="submit"]');
-      const childName = document.getElementById('childName').value.trim();
-      const dream = document.getElementById('dream').value.trim();
-      const parentName = document.getElementById('parentName').value.trim();
-      const parentEmail = document.getElementById('parentEmail').value.trim();
+      if (!form) return;
 
-      submitButton.disabled = true;
-      submitButton.textContent = 'Versturen...';
+      const isLocalFile = window.location.protocol === 'file:';
 
-      try {
-        const response = await fetch('/api/send-dream', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ childName, dream, parentName, parentEmail })
-        });
-
-        if (!response.ok) throw new Error('De droom kon niet worden verstuurd.');
-
-        form.reset();
-        submitButton.textContent = 'Verstuurd!';
-      } catch (error) {
-        submitButton.disabled = false;
-        submitButton.textContent = '✨ Verstuur mijn droom';
-        alert(error.message);
+      if (isLocalFile && localNote) {
+        localNote.hidden = false;
       }
-    }
+
+      form.addEventListener('submit', function (event) {
+        if (!isLocalFile) {
+          return;
+        }
+
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+          return;
+        }
+
+        const childName = document.getElementById('childName').value.trim();
+        const dream = document.getElementById('dream').value.trim();
+        const parentName = document.getElementById('parentName').value.trim();
+        const parentEmail = document.getElementById('parentEmail').value.trim();
+
+        const subject = 'Mijn Kinderfoor-droom voor 2028 - ' + childName;
+        const body = [
+          'Hallo Kinderfoor,',
+          '',
+          'Graag deel ik mijn Kinderfoor-droom voor de 25ste editie in 2028.',
+          '',
+          'Voornaam kind: ' + childName,
+          '',
+          'Mijn Kinderfoor-droom:',
+          dream,
+          '',
+          'Naam ouder / begeleider: ' + parentName,
+          'E-mailadres ouder / begeleider: ' + parentEmail,
+          '',
+          'Ik geef toestemming om dit idee te gebruiken als inspiratie voor de organisatie van Kinderfoor 2028.',
+          '',
+          'Groetjes'
+        ].join('\\n');
+
+        window.location.href =
+          'mailto:info@kinderfoor.be?subject=' +
+          encodeURIComponent(subject) +
+          '&body=' +
+          encodeURIComponent(body);
+      });
+    })();
+
   </script>
 </body>
 </html>

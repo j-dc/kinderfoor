@@ -1,6 +1,9 @@
 {
   "name": "kinderfoor-api",
   "private": true,
+  "engines": {
+    "node": ">=24.20.0"
+  },
   "dependencies": {
     "@sendgrid/mail": "^8.1.4"
   }
