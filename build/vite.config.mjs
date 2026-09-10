@@ -1,8 +1,23 @@
 import { defineConfig } from 'vite';
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+
+const calendarFile = resolve('src/Kinderfoor-Kuurne-2026.ics');
 
 export default defineConfig({
   root: 'src',
+  plugins: [
+    {
+      name: 'copy-calendar-file',
+      generateBundle() {
+        this.emitFile({
+          type: 'asset',
+          fileName: 'Kinderfoor-Kuurne-2026.ics',
+          source: readFileSync(calendarFile)
+        });
+      }
+    }
+  ],
   server: {
     host: '0.0.0.0',
     port: 4173,
