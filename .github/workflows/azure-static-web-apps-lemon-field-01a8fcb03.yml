@@ -41,7 +41,7 @@ jobs:
           action: "upload"
           
           app_location: "./" # App source code path
-          api_location: "./api" # Api source code path
+          api_location: "" # No API source
           output_location: "./dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
