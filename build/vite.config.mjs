@@ -29,7 +29,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve('src/index.html'),
-        'kinderfoor-2028': resolve('src/kinderfoor-2028.html')
+        'kinderfoor-2028': resolve('src/kinderfoor-2028.html'),
+        'sponsors': resolve('src/sponsors.html')
       }
     }
   }
